@@ -4,7 +4,7 @@ require 'rubygame'
 options = {}
 
 OptionParser.new do |opts|
-  opts.on( '-b BPM' ) do |bpm|
+  opts.on( '-t BPM', '--tempo BPM', /^[0-9]+/ ) do |bpm|
     options[:bpm] = bpm
   end
 end.parse!
