@@ -12,10 +12,17 @@ end.parse!
 s = Rubygame::Sound.load('../sounds/tap_short.wav')
 
 t = Thread.new do
+  puts 'press Ctrl+C to stop'
+  # main loop
   loop do
-      s.play
-      sleep( 60 / options[:bpm].to_f ) 
-  end 
+    s.play
+    sleep( 60 / options[:bpm].to_f ) 
+  end
 end
 
-t.join
+begin 
+  t.join
+rescue Interrupt => e
+  puts
+  puts 'metronome off'
+end
