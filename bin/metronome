@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+system( "ruby ../lib/optparse.rb " + ARGV.map { |e| "#{e}" }.join( ' ' ) )
+
