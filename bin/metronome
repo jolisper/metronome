@@ -1,4 +1,10 @@
 #!/usr/bin/env ruby
 
-system( "ruby ../lib/optparse.rb " + ARGV.map { |e| "#{e}" }.join( ' ' ) )
+$:.unshift File.expand_path("../../lib", __FILE__)
 
+require 'metronome'
+
+args = ARGV.dup
+ARGV.clear
+
+Metronome::Command.run( args )
