@@ -21,20 +21,20 @@ module Metronome
 
     # Start metronome
     def self.start( bpm )
-      s = Rubygame::Sound.load( File.expand_path("../../sounds/tap_short.wav", __FILE__) )
+      sound = Rubygame::Sound.load( File.expand_path("../../sounds/tap_short.wav", __FILE__) )
 
       t = Thread.new do
         puts 'press Ctrl+C to stop'
         # main loop
         loop do
-          s.play
+          sound.play
           sleep( 60 / bpm.to_f ) 
         end
       end
 
       begin 
         t.join
-      rescue Interrupt => e
+      rescue Interrupt
         puts "\nmetronome off"
       end
     end
