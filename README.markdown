@@ -10,6 +10,11 @@ This program uses rubygame gem that requires sdllib to work, follow the next ins
 
 [https://github.com/rubygame/rubygame/wiki/Install](https://github.com/rubygame/rubygame/wiki/Install)
 
+Usage
+-----
+
+    $ metronome -t 60
+
 Copyright
 ---------
 
